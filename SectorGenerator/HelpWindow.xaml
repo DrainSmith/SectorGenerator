@@ -1,0 +1,65 @@
+﻿<Window x:Class="SectorGenerator.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SectorGenerator"
+        mc:Ignorable="d"
+        Title="Help" Height="351.809" Width="300" ResizeMode="NoResize" Icon="icon.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="5">
+            Ag - Agricultural<LineBreak/>
+            As - Asteriord<LineBreak/>
+            Ba - Barren<LineBreak/>
+            De - Desert<LineBreak/>
+            Fl - Fluid Oceans<LineBreak/>
+            Ga - Garden<LineBreak/>
+            Hi - High Population<LineBreak/>
+            Ht - High Tech<LineBreak/>
+            Ie - Ice Capped<LineBreak/>
+            In - Industrial<LineBreak/>
+            Lo - Low Population<LineBreak/>
+            Lt - Low Tech<LineBreak/>
+            Na - Non-Agricultural<LineBreak/>
+            Ni - Non-Industrial<LineBreak/>
+            Po - Poor<LineBreak/>
+            Ri- Rich<LineBreak/>
+            Va - Vacuum<LineBreak/>
+            Wa - Water World
+        </TextBlock>
+        <StackPanel Grid.Column="1">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Gas Giant"/>
+                <Image Width="25" Height="20" Source="pack://application:,,,/Resources/Gas Giant.png" Name="GasGiantImage"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Planet (Dry)"/>
+                <Image Width="20" Height="20" Source="pack://application:,,,/Resources/Planet (Dry).png" Name="DryImage"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Planet (Water)"/>
+                <Image Width="20" Height="20" Source="pack://application:,,,/Resources/Planet (Water Present).png" Name="WaterImage"/>
+            </StackPanel>
+            <!--<StackPanel Orientation="Horizontal">
+                <Label Content="Fuel Dump"/>
+                <Image Width="20" Height="20"  Source="pack://siteoforigin:,,,/Resources/fuel dump.png" Name="FuelDumpImage"/>
+            </StackPanel>-->
+            <TextBlock Margin="5,15,5,5">
+                Reading World Profiles<LineBreak/>
+                -Starport<LineBreak/>
+                -Size<LineBreak/>
+                -Atmosphere<LineBreak/>
+                -Hydrographics<LineBreak/>
+                -Population<LineBreak/>
+                -Government Type<LineBreak/>
+                -Law Level<LineBreak/>
+                -Tech Level<LineBreak/>
+            </TextBlock>
+        </StackPanel>
+
+     </Grid>
+</Window>

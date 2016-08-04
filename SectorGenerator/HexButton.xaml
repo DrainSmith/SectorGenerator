@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="SectorGenerator.HexButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SectorGenerator"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" >
+    <UserControl.Resources>
+        <DrawingImage x:Key="HexagonImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="White"  
+                           Geometry="M 250,0 L 750,0 L 1000,433 L 750,866 L 250,866 L 0,433 Z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black" Thickness="10" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="HexagonHoverImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="Khaki"  
+                           Geometry="M 250,0 L 750,0 L 1000,433 L 750,866 L 250,866 L 0,433 Z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black" Thickness="10" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+        <DrawingImage x:Key="HexagonPressedImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="Orange"  
+                           Geometry="M 250,0 L 750,0 L 1000,433 L 750,866 L 250,866 L 0,433 Z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black" Thickness="10" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <DrawingImage x:Key="HexagonAmberImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="#a0bd8809"  
+                           Geometry="M 250,0 L 750,0 L 1000,433 L 750,866 L 250,866 L 0,433 Z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black" Thickness="10" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <DrawingImage x:Key="HexagonRedImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="#A0BB2929"  
+                           Geometry="M 250,0 L 750,0 L 1000,433 L 750,866 L 250,866 L 0,433 Z">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black" Thickness="10" LineJoin="Round"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <Style x:Key="HexagonButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#a0BB2929"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <!--<Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="img" Property="Source" Value="{StaticResource HexagonHoverImage}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="img" Property="Source" Value="{StaticResource HexagonPressedImage}"/>
+                            </Trigger>-->
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--<Style TargetType="{x:Type Button}" BasedOn="{StaticResource HexagonButtonStyle}"/>-->
+    </UserControl.Resources>
+        <Button x:Name="MainButton" Style="{StaticResource HexagonButtonStyle}" Click="MainButton_Click">
+            <Grid>
+                <Image x:Name="img" Source="{StaticResource HexagonImage}"/>
+                <Label Name="SubSectorNumber" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,12,0,0">
+                
+                    <Label Name="NameLabel" FontSize="12" FontWeight="Bold" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></Label>
+                    <StackPanel Orientation="Horizontal" Height="15" HorizontalAlignment="Center">
+                        <Image Width="20" Height="20" Source="pack://application:,,,/Resources/Gas Giant.png" Name="GasGiantImage" Visibility="Collapsed"/>
+                        <Image Width="20" Height="20" Source="pack://application:,,,/Resources/Planet (Dry).png" Name="DryImage" Visibility="Collapsed"/>
+                        <Image Width="20" Height="20" Source="pack://application:,,,/Resources/Planet (Water Present).png" Name="WaterImage" Visibility="Collapsed"/>
+                        <Image Width="20" Height="20" Source="pack://application:,,,/Resources/fuel dump.png" Name="FuelDumpImage" Visibility="Collapsed"/>
+                    </StackPanel>
+                    <Label Name="TradeCodesLabel" FontSize="10" HorizontalAlignment="Center" HorizontalContentAlignment="Center"></Label>
+                    <Label Name="UniversalSectorDescriptor" FontSize="10" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Label>
+
+                </StackPanel>
+            </Grid>
+        </Button>
+</UserControl>

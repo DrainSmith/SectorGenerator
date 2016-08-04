@@ -1,0 +1,105 @@
+﻿<Window x:Class="SectorGenerator.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SectorGenerator"
+    Title="Sector Generator" Height="904.5" Width="1042.5" WindowStyle="None" ResizeMode="CanResizeWithGrip" AllowsTransparency="True" Icon="icon.ico">
+    <Border BorderThickness="1" BorderBrush="#193653">
+        <DockPanel LastChildFill="True">
+            <Border Style="{StaticResource TitleBarStyle}" DockPanel.Dock="Top" Height="27" Name="titlebar" MouseLeftButtonDown="titlebar_MouseLeftButtonDown" >
+                <Grid>
+                    <TextBlock Text="{Binding Title, RelativeSource={RelativeSource FindAncestor,AncestorType=Window},FallbackValue=Title}" 
+                           Margin="10,4,397,5"
+                           VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#e2e2e2">
+
+                    </TextBlock>
+                    <StackPanel Name="HomeButtonsPanel" Height="23"  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                        <Button Margin="1,0,0,0" Click="HelpButton_Click" Content="?" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16" FontWeight="Bold" Height="23" Width="50" Foreground="White" BorderThickness="0"/>
+                        <Button Margin="1,0,0,0" Click="MinimizeButton_Click" Content="_" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="16" FontWeight="Bold" Height="23" Width="50" Foreground="White" BorderThickness="0"/>
+                        <Button Margin="1,0,3,0" Click="ExitButton_Click" Style="{StaticResource RedButtonStyle}" Content="✖" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Height="23" Width="50" Foreground="White" BorderThickness="0"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Grid Name="MainGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="90"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <Viewbox HorizontalAlignment="Left" Name="MainViewbox">
+                        <Border BorderBrush="Black" BorderThickness="2" Name="MainBorder" Margin="25"  >
+                            <local:HexagonGrid Rows="10" Columns="8" HexagonSideLength="55" x:Name="HexGrid" Height="1056" Width="816"/>
+                        </Border>
+                    </Viewbox>
+                    <Grid Name="PlanetProfileGrid" Visibility="Hidden">
+                        <StackPanel HorizontalAlignment="Left">
+                            <Label Name="PlanetNameLabel" FontSize="30" FontWeight="Bold"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="15" FontWeight="Bold" Content="Starport Class:"/>
+                                <Label Name="StarPortLabel" FontSize="15" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="15" FontWeight="Bold" Content="Size:"/>
+                                <Label Name="SizeLabel" FontSize="15" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="15" FontWeight="Bold" Content="Atmosphere:"/>
+                                <Label Name="AtmosphereLabel" FontSize="15" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="15" FontWeight="Bold" Content="Hydrographics:"/>
+                                <Label Name="HydrographicsLabel" FontSize="15" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="15" FontWeight="Bold" Content="Population:"/>
+                                <Label Name="PopulationLabel" FontSize="15" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="15" FontWeight="Bold" Content="Government:"/>
+                                <TextBox Name="GovernmentTextBox" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" BorderThickness="0" Width="300" Margin="0,3,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="15" FontWeight="Bold" Content="Law Level Bans:"/>
+                                <TextBox Name="LawLevelLabel" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" BorderThickness="0" Width="280" Margin="0,3,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="15" FontWeight="Bold" Content="Tech Level:"/>
+                                <Label Name="TechTextBox" FontSize="15"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="15" FontWeight="Bold" Content="Temperature:"/>
+                                <TextBox Name="TemperatureTextBox" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" BorderThickness="0" Width="280" Margin="0,3,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="15" FontWeight="Bold" Content="Notes"/>
+                                <TextBox Name="NotesTextBox" FontSize="15" AcceptsReturn="True" TextWrapping="Wrap" BorderThickness="1" Width="350" Height="250" Margin="0,8,0,0" TextChanged="NotesTextBox_TextChanged"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <CheckBox Name="RedZonedCheckbox" Content="Red Zone" Checked="RedZonedCheckbox_Checked" Unchecked="RedZonedCheckbox_Unchecked" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+                <!--<Canvas Name="MainCanvas"/>-->
+                <Grid VerticalAlignment="Bottom" Height="90" Grid.Row="1" Background="#262626">
+                    <GroupBox VerticalAlignment="Top" Height="45" Header="Options" Foreground="White" BorderThickness="0">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton Content="Normal" GroupName="Density" Margin="10,5,5,0" IsChecked="True" Checked="NormalRadioButton_Checked"  Foreground="White"/>
+                            <RadioButton Content="Rift" GroupName="Density" Margin="0,5,5,0" Checked="RiftRadioButton_Checked" Foreground="White"/>
+                            <RadioButton Content="Sparse" GroupName="Density" Margin="0,5,5,0" Checked="SparseRadioButton_Checked" Foreground="White"/>
+                            <RadioButton Content="Dense" GroupName="Density" Margin="0,5,5,0" Checked="DenseRadioButton_Checked" Foreground="White"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal">
+                        <Button Grid.Column="0" Click="NewButton_Click" Content="New" Height="35" Width="170"/>
+                        <Button Grid.Column="1" Content="Print" Height="35" Click="PrintButton_Click" Width="170"/>
+                        <Button Grid.Column="2" Content="Save" Height="35" Click="SaveButton_Click" Width="170"/>
+                        <Button Grid.Column="3" Content="Load" Height="35" Click="LoadButton_Click" Width="170"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </DockPanel>
+    </Border>
+</Window>
