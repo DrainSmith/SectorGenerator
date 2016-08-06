@@ -76,6 +76,7 @@ namespace SectorGenerator
                 _currentButton = source;
                 PlanetProfileGrid.Visibility = Visibility.Visible;
                 PlanetNameLabel.Content = source.Planet.Name;
+                UWPLabel.Content = source.Planet.Profile + "    " + source.Planet.TradeCodes;
                 StarPortLabel.Content = (source.Planet.StarPort == 'X') ? "No starport" : source.Planet.StarPort.ToString();
                 SizeLabel.Content = GetSizeDescription(source.Planet.Size);
                 AtmosphereLabel.Content = GetAtmosphereDescription(source.Planet.Atmosphere);

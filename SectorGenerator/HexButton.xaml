@@ -43,11 +43,18 @@
                 </DrawingGroup>
             </DrawingImage.Drawing>
         </DrawingImage>
-
-        <DrawingImage x:Key="HexagonAmberImage">
+        <RadialGradientBrush x:Key="AmberGradient" GradientOrigin="0.5,0.5">
+            <GradientStop Color="White" Offset="0.6"/>
+            <GradientStop Color="#a0bd8809" Offset="1.0"/>
+        </RadialGradientBrush>
+        <RadialGradientBrush x:Key="RedGradient" GradientOrigin="0.5,0.5">
+            <GradientStop Color="White" Offset="0.6"/>
+            <GradientStop Color="#AFBB2929" Offset="1.0"/>
+        </RadialGradientBrush>
+            <DrawingImage x:Key="HexagonAmberImage">
             <DrawingImage.Drawing>
                 <DrawingGroup>
-                    <GeometryDrawing Brush="#a0bd8809"  
+                    <GeometryDrawing Brush="{StaticResource AmberGradient}"  
                            Geometry="M 250,0 L 750,0 L 1000,433 L 750,866 L 250,866 L 0,433 Z">
                         <GeometryDrawing.Pen>
                             <Pen Brush="Black" Thickness="10" LineJoin="Round"/>
@@ -60,7 +67,7 @@
         <DrawingImage x:Key="HexagonRedImage">
             <DrawingImage.Drawing>
                 <DrawingGroup>
-                    <GeometryDrawing Brush="#A0BB2929"  
+                    <GeometryDrawing Brush="{StaticResource RedGradient}"  
                            Geometry="M 250,0 L 750,0 L 1000,433 L 750,866 L 250,866 L 0,433 Z">
                         <GeometryDrawing.Pen>
                             <Pen Brush="Black" Thickness="10" LineJoin="Round"/>

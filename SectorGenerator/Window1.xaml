@@ -34,6 +34,7 @@
                     <Grid Name="PlanetProfileGrid" Visibility="Hidden">
                         <StackPanel HorizontalAlignment="Left">
                             <Label Name="PlanetNameLabel" FontSize="30" FontWeight="Bold"/>
+                            <Label Name="UWPLabel" FontSize="20"/>
                             <StackPanel Orientation="Horizontal">
                                 <Label FontSize="15" FontWeight="Bold" Content="Starport Class:"/>
                                 <Label Name="StarPortLabel" FontSize="15" />
