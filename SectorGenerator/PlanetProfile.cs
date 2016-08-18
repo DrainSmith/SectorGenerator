@@ -27,6 +27,9 @@ namespace SectorGenerator
         public int Row { get; set; }
         public string Notes { get; set; }
         public bool isRed { get; set; }
+        public bool HasTas { get; set; }
+        public bool HasNavalBase { get; set; }
+        public bool HasScoutBase { get; set; }
         Random r;
 
         public bool hasPlanet = false;
@@ -251,12 +254,54 @@ namespace SectorGenerator
             StarPort = GenerateStarport(Population);
             TechLevel = GenerateTechLevel(StarPort, Size, Atmosphere, Hydrographics, Population, Government);
             Temperature = GenerateTemperature();
+            GenerateBases();
             Name = RandomName.GetName(r);
             var i = r.Next(2, 12);
             if (i > 9)
                 HasGasGiant = false;
             else HasGasGiant = true;
             GenerateTradeCodes();
+        }
+
+        private void GenerateBases()
+        {
+            if (StarPort == 'A')
+            {
+                HasTas = true;
+                int val = r.Next(2, 12);
+                if (val > 7)
+                    HasNavalBase = true;
+                val = r.Next(2, 12);
+                if (val > 9)
+                    HasScoutBase = true;
+                
+            }
+            else if (StarPort == 'B')
+            {
+                HasTas = true;
+                int val = r.Next(2, 12);
+                if (val > 7)
+                    HasNavalBase = true;
+                val = r.Next(2, 12);
+                if (val > 7)
+                    HasScoutBase = true;
+                
+            }
+            else if (StarPort == 'C')
+            {
+                int val = r.Next(2, 12);
+                if (val > 7)
+                    HasScoutBase = true;
+                val = r.Next(2, 12);
+                if (val > 9)
+                    HasTas = true;
+            }
+            if (StarPort == 'D')
+            {
+                int val = r.Next(2, 12);
+                if (val > 6)
+                    HasScoutBase = true;
+            }
         }
 
         private void GenerateTradeCodes()

@@ -33,8 +33,18 @@
                     </Viewbox>
                     <Grid Name="PlanetProfileGrid" Visibility="Hidden">
                         <StackPanel HorizontalAlignment="Left">
-                            <Label Name="PlanetNameLabel" FontSize="30" FontWeight="Bold"/>
+                            <TextBox Name="PlanetNameLabel" FontSize="30" FontWeight="Bold" TextChanged="PlanetNameLabel_TextChanged"/>
                             <Label Name="UWPLabel" FontSize="20"/>
+                            <StackPanel Orientation="Horizontal" Height="35" HorizontalAlignment="Left">
+                                <Image Width="25" Height="20" Source="pack://application:,,,/Resources/Gas Giant.png" Name="GasGiantImage" Visibility="Collapsed"/>
+                                <Image Width="25" Height="25" Source="pack://application:,,,/Resources/Planet (Dry).png" Name="DryImage" Visibility="Collapsed"/>
+                                <Image Width="25" Height="25" Source="pack://application:,,,/Resources/Planet (Water Present).png" Name="WaterImage" Visibility="Collapsed"/>
+                                <Image Width="25" Height="25" Source="pack://application:,,,/Resources/fuel dump.png" Name="FuelDumpImage" Visibility="Collapsed"/>
+                                <!--<Image Width="20" Height="20" Source="pack://application:,,,/Resources/Millitary Base.png" Name="MillitaryBaseImage" Visibility="Collapsed"/>-->
+                                <Image Width="25" Height="25" Source="pack://application:,,,/Resources/Naval Base.png" Name="NavalBaseImage" Visibility="Collapsed"/>
+                                <Image Width="25" Height="25" Source="pack://application:,,,/Resources/Scout Base.png" Name="ScoutBaseImage" Visibility="Collapsed"/>
+                                <Image Width="25" Height="25" Source="pack://application:,,,/Resources/TAS.png" Name="TasImage" Visibility="Collapsed"/>
+                            </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Label FontSize="15" FontWeight="Bold" Content="Starport Class:"/>
                                 <Label Name="StarPortLabel" FontSize="15" />

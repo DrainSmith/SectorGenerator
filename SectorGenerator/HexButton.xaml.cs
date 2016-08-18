@@ -63,7 +63,29 @@ namespace SectorGenerator
                 if (p.Hydrographics > 3)
                     SetWaterPlanet();
                 else SetDryPlanet();
+
+                if (p.HasScoutBase)
+                    SetScoutBase();
+                if (p.HasTas)
+                    SetTas();
+                if (p.HasNavalBase)
+                    SetNavalBase();
             }
+        }
+
+        public void SetScoutBase()
+        {
+            ScoutBaseImage.Visibility = Visibility.Visible;
+        }
+
+        public void SetTas()
+        {
+            TasImage.Visibility = Visibility.Visible;
+        }
+
+        public void SetNavalBase()
+        {
+            NavalBaseImage.Visibility = Visibility.Visible;
         }
 
         public void SetAmber()

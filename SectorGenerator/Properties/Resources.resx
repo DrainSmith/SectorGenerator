@@ -130,4 +130,19 @@
   <data name="Planet__Water_Present_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Planet (Water Present).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Millitary_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Millitary Base.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Naval_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Naval Base.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Scout_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Scout Base.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Way_Station" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Way Station.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TAS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TAS.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

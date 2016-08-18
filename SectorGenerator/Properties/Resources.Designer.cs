@@ -83,6 +83,26 @@ namespace SectorGenerator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Millitary_Base {
+            get {
+                object obj = ResourceManager.GetObject("Millitary_Base", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Naval_Base {
+            get {
+                object obj = ResourceManager.GetObject("Naval_Base", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Planet__Dry_ {
             get {
                 object obj = ResourceManager.GetObject("Planet__Dry_", resourceCulture);
@@ -96,6 +116,36 @@ namespace SectorGenerator.Properties {
         internal static System.Drawing.Bitmap Planet__Water_Present_ {
             get {
                 object obj = ResourceManager.GetObject("Planet__Water_Present_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Scout_Base {
+            get {
+                object obj = ResourceManager.GetObject("Scout_Base", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TAS {
+            get {
+                object obj = ResourceManager.GetObject("TAS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Way_Station {
+            get {
+                object obj = ResourceManager.GetObject("Way_Station", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

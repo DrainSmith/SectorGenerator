@@ -27,6 +27,7 @@ namespace SectorGenerator
         WorldFrequency _lastUsed;
         List<PlanetProfile> _profiles = new List<PlanetProfile>();
         HexButton _currentButton;
+        HelpWindow h = new HelpWindow();
 
         public Window1()
         {
@@ -73,9 +74,10 @@ namespace SectorGenerator
             HexButton source = (HexButton)sender;
             if (source.Planet.Name != string.Empty)
             {
+                HideAllIcons();
                 _currentButton = source;
                 PlanetProfileGrid.Visibility = Visibility.Visible;
-                PlanetNameLabel.Content = source.Planet.Name;
+                PlanetNameLabel.Text = source.Planet.Name;
                 UWPLabel.Content = source.Planet.Profile + "    " + source.Planet.TradeCodes;
                 StarPortLabel.Content = (source.Planet.StarPort == 'X') ? "No starport" : source.Planet.StarPort.ToString();
                 SizeLabel.Content = GetSizeDescription(source.Planet.Size);
@@ -88,13 +90,66 @@ namespace SectorGenerator
                 TemperatureTextBox.Text = GetTemperatureDescription(source.Planet.Temperature);
                 NotesTextBox.Text = source.Planet.Notes;
                 RedZonedCheckbox.IsChecked = source.Planet.isRed;
+
+
+                if (source.Planet.HasGasGiant)
+                    SetGasGiant();
+                if (source.Planet.Hydrographics > 3)
+                    SetWaterPlanet();
+                else SetDryPlanet();
+
+                if (source.Planet.HasScoutBase)
+                    SetScoutBase();
+                if (source.Planet.HasTas)
+                    SetTas();
+                if (source.Planet.HasNavalBase)
+                    SetNavalBase();
             }
             else
             {
                 PlanetProfileGrid.Visibility = Visibility.Hidden;
             }
         }
-      
+
+        public void HideAllIcons()
+        {
+            ScoutBaseImage.Visibility = Visibility.Collapsed;
+            TasImage.Visibility = Visibility.Collapsed;
+            NavalBaseImage.Visibility = Visibility.Collapsed;
+            WaterImage.Visibility = Visibility.Collapsed;
+            DryImage.Visibility = Visibility.Collapsed;
+            GasGiantImage.Visibility = Visibility.Collapsed;
+        }
+
+        public void SetScoutBase()
+        {
+            ScoutBaseImage.Visibility = Visibility.Visible;
+        }
+
+        public void SetTas()
+        {
+            TasImage.Visibility = Visibility.Visible;
+        }
+
+        public void SetNavalBase()
+        {
+            NavalBaseImage.Visibility = Visibility.Visible;
+        }
+
+        public void SetWaterPlanet()
+        {
+            WaterImage.Visibility = Visibility.Visible;
+        }
+
+        public void SetDryPlanet()
+        {
+            DryImage.Visibility = Visibility.Visible;
+        }
+
+        public void SetGasGiant()
+        {
+            GasGiantImage.Visibility = Visibility.Visible;
+        }
 
         private string GetSizeDescription(int size)
         {
@@ -362,7 +417,8 @@ namespace SectorGenerator
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            h.Close();
+            this.Close();
         }
 
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
@@ -377,7 +433,6 @@ namespace SectorGenerator
 
         private void HelpButton_Click(object sender, RoutedEventArgs e)
         {
-            HelpWindow h = new HelpWindow();
             h.Show();
         }
 
@@ -398,6 +453,11 @@ namespace SectorGenerator
             if (_currentButton.Planet.isAmber)
                 _currentButton.SetAmber();
             else _currentButton.SetWhite();
+        }
+
+        private void PlanetNameLabel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _currentButton.Planet.Name = PlanetNameLabel.Text;
         }
     }
 }
