@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SectorGenerator"
         mc:Ignorable="d"
-        Title="Help" Height="351.809" Width="300" ResizeMode="NoResize" Icon="icon.ico">
+        Title="Help" Height="357.116" Width="298.484" ResizeMode="NoResize" Icon="icon.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -44,6 +44,19 @@
                 <Label Content="Planet (Water)"/>
                 <Image Width="20" Height="20" Source="pack://application:,,,/Resources/Planet (Water Present).png" Name="WaterImage"/>
             </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Naval base"/>
+                <Image Width="15" Height="15" Source="pack://application:,,,/Resources/Naval Base.png" Name="NavalBaseImage" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Scout Base"/>
+                <Image Width="15" Height="15" Source="pack://application:,,,/Resources/Scout Base.png" Name="ScoutBaseImage" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="TAS"/>
+                <Image Width="15" Height="15" Source="pack://application:,,,/Resources/TAS.png" Name="TasImage"/>
+            </StackPanel>
+
             <!--<StackPanel Orientation="Horizontal">
                 <Label Content="Fuel Dump"/>
                 <Image Width="20" Height="20"  Source="pack://siteoforigin:,,,/Resources/fuel dump.png" Name="FuelDumpImage"/>
@@ -61,5 +74,5 @@
             </TextBlock>
         </StackPanel>
 
-     </Grid>
+    </Grid>
 </Window>

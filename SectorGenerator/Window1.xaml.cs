@@ -458,6 +458,7 @@ namespace SectorGenerator
         private void PlanetNameLabel_TextChanged(object sender, TextChangedEventArgs e)
         {
             _currentButton.Planet.Name = PlanetNameLabel.Text;
+            _currentButton.SubSectorName = PlanetNameLabel.Text;
         }
     }
 }

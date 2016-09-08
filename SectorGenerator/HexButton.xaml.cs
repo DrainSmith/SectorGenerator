@@ -23,10 +23,12 @@ namespace SectorGenerator
 
         private string _sectorId = "";
         private string _profile = "";
+        private string _name = "";
+        private string _tradeCodes = "";
         public string SectorId { get { return _sectorId; } set { _sectorId = value; SubSectorNumber.Content = value; } }
         public string Profile { get { return _profile; } set { _profile = value; UniversalSectorDescriptor.Content = value; } }
-        public string TradeCodes { get { return _profile; } set { _profile = value; TradeCodesLabel.Content = value; } }
-        public string SubSectorName { get { return _profile; } set { _profile = value; NameLabel.Content = value; } }
+        public string TradeCodes { get { return _tradeCodes; } set { _tradeCodes = value; TradeCodesLabel.Content = value; } }
+        public string SubSectorName { get { return _name; } set { _name = value; NameLabel.Content = value; } }
 
         private EventHandler<RoutedEventArgs> _onButtonClickEvent;
         public event EventHandler<RoutedEventArgs> Click
